@@ -1,18 +1,11 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import MenuCategory from '../components/menu/MenuCategory';
 import { DietaryKey } from '../components/menu/DietaryIcon';
 import { AnimateOnScroll } from '../hooks/useScrollAnimation.jsx';
-import menuData from '../data/menu.json';
+import menuData from '../content/menu.json';
 
 export default function Menu() {
-  const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState('appetizers');
-
-  const categories = menuData.categories.map(cat => ({
-    ...cat,
-    name: t(cat.nameKey),
-  }));
 
   const scrollToCategory = (categoryId) => {
     setActiveCategory(categoryId);
@@ -65,7 +58,7 @@ export default function Menu() {
           style={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: 'url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&h=600&fit=crop)',
+            backgroundImage: `url(${menuData.hero.image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -82,7 +75,7 @@ export default function Menu() {
                 color: 'white',
               }}
             >
-              {t('menu.title')}
+              {menuData.hero.title}
             </h1>
           </AnimateOnScroll>
         </div>
@@ -108,7 +101,7 @@ export default function Menu() {
               gap: '0.5rem',
             }}
           >
-            {categories.map((category) => (
+            {menuData.categories.map((category) => (
               <CategoryButton
                 key={category.id}
                 category={category}
@@ -131,7 +124,7 @@ export default function Menu() {
 
         {/* Categories */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-          {categories.map((category, index) => {
+          {menuData.categories.map((category, index) => {
             const items = menuData.items.filter(item => item.category === category.id);
             return (
               <AnimateOnScroll key={category.id} animation="fadeUp" delay={index * 0.1}>
@@ -164,7 +157,7 @@ export default function Menu() {
               <svg style={{ width: '20px', height: '20px' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              {t('menu.download_pdf')}
+              {menuData.downloadPdf}
             </button>
           </div>
         </AnimateOnScroll>

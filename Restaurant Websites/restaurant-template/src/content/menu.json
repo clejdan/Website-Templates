@@ -1,21 +1,26 @@
 {
-  "categories": [
-    {
-      "id": "appetizers",
-      "nameKey": "menu.categories.appetizers"
-    },
-    {
-      "id": "mains",
-      "nameKey": "menu.categories.mains"
-    },
-    {
-      "id": "desserts",
-      "nameKey": "menu.categories.desserts"
-    },
-    {
-      "id": "drinks",
-      "nameKey": "menu.categories.drinks"
+  "hero": {
+    "title": "Our Menu",
+    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&h=600&fit=crop"
+  },
+  "dietaryKey": {
+    "title": "Dietary Key",
+    "labels": {
+      "vegetarian": "Vegetarian",
+      "vegan": "Vegan",
+      "glutenFree": "Gluten-Free",
+      "nutFree": "Nut-Free",
+      "dairyFree": "Dairy-Free",
+      "spicy": "Spicy",
+      "chefsPick": "Chef's Pick"
     }
+  },
+  "downloadPdf": "Download PDF Menu",
+  "categories": [
+    { "id": "appetizers", "name": "Appetizers" },
+    { "id": "mains", "name": "Main Courses" },
+    { "id": "desserts", "name": "Desserts" },
+    { "id": "drinks", "name": "Drinks" }
   ],
   "items": [
     {

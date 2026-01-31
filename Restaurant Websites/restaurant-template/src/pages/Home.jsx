@@ -1,13 +1,13 @@
-import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import { AnimateOnScroll } from '../hooks/useScrollAnimation.jsx';
-import menuData from '../data/menu.json';
+import menuData from '../content/menu.json';
+import homeContent from '../content/home.json';
+import site from '../content/site.json';
+import aboutContent from '../content/about.json';
 
 export default function Home() {
-  const { t } = useTranslation();
-
   // Get featured dishes (chef's picks)
   const featuredDishes = menuData.items
     .filter(item => item.dietary.includes('chefsPick'))
@@ -23,7 +23,7 @@ export default function Home() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&h=1080&fit=crop)',
+            backgroundImage: `url(${homeContent.hero.image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -46,7 +46,7 @@ export default function Home() {
               className="font-heading font-bold text-white"
               style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '1.5rem' }}
             >
-              {t('home.hero_title')}
+              {homeContent.hero.title}
             </h1>
           </AnimateOnScroll>
           <AnimateOnScroll animation="fadeUp" duration={0.8} delay={0.2}>
@@ -61,16 +61,16 @@ export default function Home() {
                 textAlign: 'center'
               }}
             >
-              {t('home.hero_subtitle')}
+              {homeContent.hero.subtitle}
             </p>
           </AnimateOnScroll>
           <AnimateOnScroll animation="fadeUp" duration={0.8} delay={0.4}>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
               <Button to="/reservations" size="lg">
-                {t('home.reserve_button')}
+                {site.cta.reserve}
               </Button>
               <Button to="/menu" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-secondary">
-                {t('home.view_menu')}
+                {site.cta.viewMenu}
               </Button>
             </div>
           </AnimateOnScroll>
@@ -85,7 +85,7 @@ export default function Home() {
               className="font-heading font-bold text-secondary"
               style={{ fontSize: 'clamp(1.875rem, 4vw, 2.5rem)', textAlign: 'center', marginBottom: '3rem' }}
             >
-              {t('home.featured_dishes')}
+              {homeContent.featured.title}
             </h2>
           </AnimateOnScroll>
           <div
@@ -112,7 +112,7 @@ export default function Home() {
           <AnimateOnScroll animation="fadeUp" delay={0.4}>
             <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
               <Button to="/menu" variant="outline">
-                {t('common.view_all')} {t('nav.menu')}
+                {site.cta.viewAll} {site.nav.menu}
               </Button>
             </div>
           </AnimateOnScroll>
@@ -136,20 +136,20 @@ export default function Home() {
                   className="font-heading font-bold text-secondary"
                   style={{ fontSize: 'clamp(1.875rem, 4vw, 2.5rem)', marginBottom: '1.5rem' }}
                 >
-                  {t('home.our_story')}
+                  {homeContent.story.title}
                 </h2>
                 <p className="text-text-light" style={{ lineHeight: '1.75', marginBottom: '1.5rem' }}>
-                  {t('about.our_story_text')}
+                  {aboutContent.story.paragraphs[0]}
                 </p>
                 <Button to="/about" variant="outline">
-                  {t('common.learn_more')}
+                  {site.cta.learnMore}
                 </Button>
               </div>
             </AnimateOnScroll>
             <AnimateOnScroll animation="fadeLeft">
               <div style={{ borderRadius: '0.75rem', overflow: 'hidden', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }}>
                 <img
-                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop"
+                  src={homeContent.story.image}
                   alt="Restaurant interior"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -176,11 +176,11 @@ export default function Home() {
                   className="font-heading font-bold"
                   style={{ fontSize: '1.875rem', marginBottom: '1.5rem', color: 'white' }}
                 >
-                  {t('home.hours_title')}
+                  {homeContent.hours.title}
                 </h2>
                 <div style={{ color: '#d1d5db' }}>
-                  <p style={{ marginBottom: '0.5rem' }}>{t('home.hours_weekday')}</p>
-                  <p>{t('home.hours_weekend')}</p>
+                  <p style={{ marginBottom: '0.5rem' }}>{site.hours.weekday}</p>
+                  <p>{site.hours.weekend}</p>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -192,15 +192,15 @@ export default function Home() {
                   className="font-heading font-bold"
                   style={{ fontSize: '1.875rem', marginBottom: '1.5rem', color: 'white' }}
                 >
-                  {t('home.visit_us')}
+                  {homeContent.location.title}
                 </h2>
                 <div style={{ color: '#d1d5db', marginBottom: '1.5rem' }}>
-                  <p>123 Restaurant Street</p>
-                  <p>New York, NY 10001</p>
-                  <p style={{ marginTop: '0.5rem' }}>(555) 123-4567</p>
+                  <p>{site.address.street}</p>
+                  <p>{site.address.city}, {site.address.state} {site.address.zip}</p>
+                  <p style={{ marginTop: '0.5rem' }}>{site.phone}</p>
                 </div>
                 <Button to="/contact" variant="accent">
-                  {t('contact.get_directions')}
+                  {site.cta.getDirections}
                 </Button>
               </div>
             </AnimateOnScroll>

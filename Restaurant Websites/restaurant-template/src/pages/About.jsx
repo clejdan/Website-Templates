@@ -1,33 +1,7 @@
-import { useTranslation } from 'react-i18next';
 import { AnimateOnScroll } from '../hooks/useScrollAnimation.jsx';
+import aboutContent from '../content/about.json';
 
 export default function About() {
-  const { t } = useTranslation();
-
-  const teamMembers = [
-    {
-      name: 'Maria Rodriguez',
-      role: 'Executive Chef',
-      image: 'https://images.unsplash.com/photo-1583394293214-28ez19d336b7?w=300&h=400&fit=crop',
-    },
-    {
-      name: 'James Chen',
-      role: 'Sous Chef',
-      image: 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=300&h=400&fit=crop',
-    },
-    {
-      name: 'Sarah Johnson',
-      role: 'Pastry Chef',
-      image: 'https://images.unsplash.com/photo-1607631568010-a87245c0daf8?w=300&h=400&fit=crop',
-    },
-  ];
-
-  const awards = [
-    { year: '2024', title: 'Best Fine Dining', source: 'City Food Awards' },
-    { year: '2023', title: 'Chef of the Year', source: 'Culinary Excellence' },
-    { year: '2022', title: 'Top 50 Restaurants', source: 'Food & Wine Magazine' },
-  ];
-
   return (
     <div>
       {/* Hero */}
@@ -44,7 +18,7 @@ export default function About() {
           style={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: 'url(https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=1920&h=800&fit=crop)',
+            backgroundImage: `url(${aboutContent.hero.image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -61,7 +35,7 @@ export default function About() {
                 color: 'white',
               }}
             >
-              {t('about.title')}
+              {aboutContent.hero.title}
             </h1>
           </AnimateOnScroll>
         </div>
@@ -89,23 +63,21 @@ export default function About() {
                     marginBottom: '1.5rem',
                   }}
                 >
-                  {t('about.our_story')}
+                  {aboutContent.story.title}
                 </h2>
                 <div style={{ color: '#666', lineHeight: '1.8' }}>
-                  <p style={{ marginBottom: '1rem' }}>{t('about.our_story_text')}</p>
-                  <p>
-                    Every dish we serve is crafted with care, using time-honored techniques
-                    and the freshest ingredients from local farms and purveyors. We believe
-                    that great food brings people together, and we're honored to be part of
-                    your most memorable moments.
-                  </p>
+                  {aboutContent.story.paragraphs.map((paragraph, index) => (
+                    <p key={index} style={{ marginBottom: index < aboutContent.story.paragraphs.length - 1 ? '1rem' : 0 }}>
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
               </div>
             </AnimateOnScroll>
             <AnimateOnScroll animation="fadeLeft">
               <div style={{ borderRadius: '0.75rem', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)' }}>
                 <img
-                  src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&h=600&fit=crop"
+                  src={aboutContent.story.image}
                   alt="Restaurant story"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -129,8 +101,8 @@ export default function About() {
             <AnimateOnScroll animation="fadeRight">
               <div style={{ borderRadius: '0.75rem', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)' }}>
                 <img
-                  src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&h=600&fit=crop"
-                  alt="Chef Maria Rodriguez"
+                  src={aboutContent.chef.image}
+                  alt={aboutContent.chef.name}
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
@@ -146,13 +118,13 @@ export default function About() {
                     marginBottom: '1.5rem',
                   }}
                 >
-                  {t('about.meet_the_chef')}
+                  {aboutContent.chef.title}
                 </h2>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: '#8B4513', marginBottom: '1rem' }}>
-                  Chef Maria Rodriguez
+                  {aboutContent.chef.name}
                 </h3>
                 <p style={{ color: '#666', lineHeight: '1.8' }}>
-                  {t('about.chef_bio')}
+                  {aboutContent.chef.bio}
                 </p>
               </div>
             </AnimateOnScroll>
@@ -174,7 +146,7 @@ export default function About() {
                 marginBottom: '3rem',
               }}
             >
-              {t('about.our_team')}
+              {aboutContent.team.title}
             </h2>
           </AnimateOnScroll>
           <div
@@ -184,7 +156,7 @@ export default function About() {
               gap: '2rem',
             }}
           >
-            {teamMembers.map((member, index) => (
+            {aboutContent.team.members.map((member, index) => (
               <AnimateOnScroll key={member.name} animation="fadeUp" delay={index * 0.15}>
                 <div style={{ textAlign: 'center' }}>
                   <div
@@ -231,7 +203,7 @@ export default function About() {
                 color: 'white',
               }}
             >
-              {t('about.awards')}
+              {aboutContent.awards.title}
             </h2>
           </AnimateOnScroll>
           <div
@@ -241,7 +213,7 @@ export default function About() {
               gap: '2rem',
             }}
           >
-            {awards.map((award, index) => (
+            {aboutContent.awards.items.map((award, index) => (
               <AnimateOnScroll key={award.title} animation="fadeUp" delay={index * 0.15}>
                 <div
                   style={{

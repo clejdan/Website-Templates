@@ -1,0 +1,40 @@
+{
+  "name": "Restaurant",
+  "phone": "(555) 123-4567",
+  "phoneRaw": "5551234567",
+  "email": "hello@restaurant.com",
+  "address": {
+    "street": "123 Restaurant Street",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001"
+  },
+  "hours": {
+    "weekday": "Monday - Friday: 11am - 10pm (ish)",
+    "weekend": "Saturday - Sunday: 10am - 11pm (we try)"
+  },
+  "social": {
+    "facebook": "#",
+    "instagram": "#",
+    "twitter": "#"
+  },
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "about": "About",
+    "reservations": "Reservations",
+    "contact": "Contact"
+  },
+  "cta": {
+    "reserve": "Claim Your Spot",
+    "viewMenu": "See What's Cookin'",
+    "viewAll": "View All",
+    "learnMore": "Learn More",
+    "getDirections": "Get Directions",
+    "sendMessage": "Send Message",
+    "backToHome": "Back to Home"
+  },
+  "footer": {
+    "copyright": "All rights reserved."
+  }
+}

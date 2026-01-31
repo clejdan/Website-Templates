@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import Button from '../ui/Button';
+import site from '../../content/site.json';
 
 // Custom NavLink with animated underline
 function AnimatedNavLink({ to, children }) {
@@ -50,29 +50,15 @@ function AnimatedNavLink({ to, children }) {
 }
 
 export default function Header() {
-  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLangOpen, setIsLangOpen] = useState(false);
 
   const navLinks = [
-    { to: '/', label: t('nav.home') },
-    { to: '/menu', label: t('nav.menu') },
-    { to: '/about', label: t('nav.about') },
-    { to: '/reservations', label: t('nav.reservations') },
-    { to: '/contact', label: t('nav.contact') },
+    { to: '/', label: site.nav.home },
+    { to: '/menu', label: site.nav.menu },
+    { to: '/about', label: site.nav.about },
+    { to: '/reservations', label: site.nav.reservations },
+    { to: '/contact', label: site.nav.contact },
   ];
-
-  const languages = [
-    { code: 'en', label: 'English', flag: '🇺🇸' },
-    { code: 'es', label: 'Español', flag: '🇪🇸' },
-  ];
-
-  const currentLang = languages.find(lang => lang.code === i18n.language) || languages[0];
-
-  const changeLanguage = (code) => {
-    i18n.changeLanguage(code);
-    setIsLangOpen(false);
-  };
 
   return (
     <header style={{ backgroundColor: 'white', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', position: 'sticky', top: 0, zIndex: 50 }}>
@@ -81,7 +67,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" style={{ flexShrink: 0 }}>
             <span className="font-heading" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#2C3E50' }}>
-              Restaurant
+              {site.name}
             </span>
           </Link>
 
@@ -94,47 +80,11 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Right side: Language + CTA */}
+          {/* Right side: CTA */}
           <div className="hidden md:flex" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-            {/* Language Selector */}
-            <div style={{ position: 'relative' }}>
-              <button
-                onClick={() => setIsLangOpen(!isLangOpen)}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', color: '#666', background: 'none', border: 'none', cursor: 'pointer' }}
-              >
-                <span>{currentLang.flag}</span>
-                <span>{currentLang.code.toUpperCase()}</span>
-                <svg
-                  className={`w-4 h-4 transition-transform ${isLangOpen ? 'rotate-180' : ''}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {isLangOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-100 py-1">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => changeLanguage(lang.code)}
-                      className={`w-full px-4 py-2 text-left text-sm flex items-center gap-2 hover:bg-background-alt ${
-                        i18n.language === lang.code ? 'text-primary font-medium' : 'text-text'
-                      }`}
-                    >
-                      <span>{lang.flag}</span>
-                      <span>{lang.label}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
             {/* Reserve Button */}
             <Button to="/reservations" size="sm">
-              {t('home.reserve_button')}
+              {site.cta.reserve}
             </Button>
           </div>
 
@@ -175,31 +125,10 @@ export default function Header() {
               </NavLink>
             ))}
 
-            {/* Mobile Language Selector */}
-            <div className="px-4 py-3 border-t border-gray-100 mt-2">
-              <p className="text-sm text-text-muted mb-2">{t('nav.language')}</p>
-              <div className="flex gap-2">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => changeLanguage(lang.code)}
-                    className={`px-3 py-2 rounded-lg text-sm flex items-center gap-1 ${
-                      i18n.language === lang.code
-                        ? 'bg-primary text-white'
-                        : 'bg-background-alt text-text hover:bg-gray-200'
-                    }`}
-                  >
-                    <span>{lang.flag}</span>
-                    <span>{lang.code.toUpperCase()}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
             {/* Mobile Reserve Button */}
             <div className="px-4 pt-2">
               <Button to="/reservations" fullWidth onClick={() => setIsMenuOpen(false)}>
-                {t('home.reserve_button')}
+                {site.cta.reserve}
               </Button>
             </div>
           </div>

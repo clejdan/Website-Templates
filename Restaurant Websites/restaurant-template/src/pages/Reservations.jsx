@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import Button from '../components/ui/Button';
 import { Input, Select, Textarea } from '../components/ui/Input';
 import { AnimateOnScroll } from '../hooks/useScrollAnimation.jsx';
+import reservationsContent from '../content/reservations.json';
+import site from '../content/site.json';
+import homeContent from '../content/home.json';
 
 export default function Reservations() {
-  const { t } = useTranslation();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     date: '',
@@ -27,21 +28,9 @@ export default function Reservations() {
     setIsSubmitted(true);
   };
 
-  const timeSlots = [
-    { value: '17:00', label: '5:00 PM' },
-    { value: '17:30', label: '5:30 PM' },
-    { value: '18:00', label: '6:00 PM' },
-    { value: '18:30', label: '6:30 PM' },
-    { value: '19:00', label: '7:00 PM' },
-    { value: '19:30', label: '7:30 PM' },
-    { value: '20:00', label: '8:00 PM' },
-    { value: '20:30', label: '8:30 PM' },
-    { value: '21:00', label: '9:00 PM' },
-  ];
-
-  const partySizes = Array.from({ length: 12 }, (_, i) => ({
+  const partySizes = Array.from({ length: reservationsContent.maxPartySize }, (_, i) => ({
     value: String(i + 1),
-    label: `${i + 1} ${i === 0 ? t('reservations.guest') : t('reservations.guests')}`,
+    label: `${i + 1} ${i === 0 ? reservationsContent.form.guestSingular : reservationsContent.form.guestPlural}`,
   }));
 
   const tomorrow = new Date();
@@ -91,10 +80,10 @@ export default function Reservations() {
                 marginBottom: '1rem',
               }}
             >
-              {t('reservations.confirmation_title')}
+              {reservationsContent.confirmation.title}
             </h2>
             <p style={{ color: '#666', marginBottom: '2rem' }}>
-              {t('reservations.confirmation_text')}
+              {reservationsContent.confirmation.text}
             </p>
             <div
               style={{
@@ -106,16 +95,16 @@ export default function Reservations() {
               }}
             >
               <h3 style={{ fontWeight: '600', color: '#2C3E50', marginBottom: '1rem' }}>
-                Reservation Details
+                {reservationsContent.confirmation.detailsTitle}
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.875rem' }}>
                 <p><span style={{ color: '#999' }}>Name:</span> {formData.name}</p>
                 <p><span style={{ color: '#999' }}>Date:</span> {formData.date}</p>
-                <p><span style={{ color: '#999' }}>Time:</span> {timeSlots.find(t => t.value === formData.time)?.label}</p>
-                <p><span style={{ color: '#999' }}>Party Size:</span> {formData.partySize} {formData.partySize === '1' ? 'guest' : 'guests'}</p>
+                <p><span style={{ color: '#999' }}>Time:</span> {reservationsContent.timeSlots.find(t => t.value === formData.time)?.label}</p>
+                <p><span style={{ color: '#999' }}>Party Size:</span> {formData.partySize} {formData.partySize === '1' ? reservationsContent.form.guestSingular : reservationsContent.form.guestPlural}</p>
               </div>
             </div>
-            <Button to="/">Back to Home</Button>
+            <Button to="/">{site.cta.backToHome}</Button>
           </div>
         </AnimateOnScroll>
       </div>
@@ -138,7 +127,7 @@ export default function Reservations() {
           style={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: 'url(https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1920&h=600&fit=crop)',
+            backgroundImage: `url(${reservationsContent.hero.image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -156,10 +145,10 @@ export default function Reservations() {
                 marginBottom: '1rem',
               }}
             >
-              {t('reservations.title')}
+              {reservationsContent.hero.title}
             </h1>
             <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.9)' }}>
-              {t('reservations.subtitle')}
+              {reservationsContent.hero.subtitle}
             </p>
           </AnimateOnScroll>
         </div>
@@ -197,7 +186,7 @@ export default function Reservations() {
                     }}
                   >
                     <Input
-                      label={t('reservations.date')}
+                      label={reservationsContent.form.dateLabel}
                       type="date"
                       name="date"
                       value={formData.date}
@@ -206,21 +195,21 @@ export default function Reservations() {
                       required
                     />
                     <Select
-                      label={t('reservations.time')}
+                      label={reservationsContent.form.timeLabel}
                       name="time"
                       value={formData.time}
                       onChange={handleChange}
-                      options={timeSlots}
-                      placeholder="Select time"
+                      options={reservationsContent.timeSlots}
+                      placeholder={reservationsContent.form.timePlaceholder}
                       required
                     />
                     <Select
-                      label={t('reservations.party_size')}
+                      label={reservationsContent.form.partySizeLabel}
                       name="partySize"
                       value={formData.partySize}
                       onChange={handleChange}
                       options={partySizes}
-                      placeholder="Select"
+                      placeholder={reservationsContent.form.partySizePlaceholder}
                       required
                     />
                   </div>
@@ -235,20 +224,20 @@ export default function Reservations() {
                     }}
                   >
                     <Input
-                      label={t('reservations.name')}
+                      label={reservationsContent.form.nameLabel}
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="John Doe"
+                      placeholder={reservationsContent.form.namePlaceholder}
                       required
                     />
                     <Input
-                      label={t('reservations.email')}
+                      label={reservationsContent.form.emailLabel}
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="john@example.com"
+                      placeholder={reservationsContent.form.emailPlaceholder}
                       required
                     />
                   </div>
@@ -256,12 +245,12 @@ export default function Reservations() {
                   {/* Phone */}
                   <div style={{ marginBottom: '1.5rem' }}>
                     <Input
-                      label={t('reservations.phone')}
+                      label={reservationsContent.form.phoneLabel}
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="(555) 123-4567"
+                      placeholder={reservationsContent.form.phonePlaceholder}
                       required
                     />
                   </div>
@@ -269,17 +258,17 @@ export default function Reservations() {
                   {/* Special Requests */}
                   <div style={{ marginBottom: '2rem' }}>
                     <Textarea
-                      label={t('reservations.special_requests')}
+                      label={reservationsContent.form.specialRequestsLabel}
                       name="specialRequests"
                       value={formData.specialRequests}
                       onChange={handleChange}
-                      placeholder={t('reservations.special_requests_placeholder')}
+                      placeholder={reservationsContent.form.specialRequestsPlaceholder}
                       rows={3}
                     />
                   </div>
 
                   <Button type="submit" size="lg" fullWidth>
-                    {t('reservations.submit')}
+                    {reservationsContent.form.submitButton}
                   </Button>
                 </form>
               </AnimateOnScroll>
@@ -305,11 +294,11 @@ export default function Reservations() {
                       marginBottom: '1rem',
                     }}
                   >
-                    {t('home.hours_title')}
+                    {homeContent.hours.title}
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.875rem', color: '#666' }}>
-                    <p>{t('home.hours_weekday')}</p>
-                    <p>{t('home.hours_weekend')}</p>
+                    <p>{site.hours.weekday}</p>
+                    <p>{site.hours.weekend}</p>
                   </div>
                 </div>
               </AnimateOnScroll>
@@ -332,20 +321,20 @@ export default function Reservations() {
                       marginBottom: '0.5rem',
                     }}
                   >
-                    10+ Guests?
+                    {reservationsContent.largeParty.title}
                   </h3>
                   <p style={{ fontSize: '0.875rem', color: '#666', marginBottom: '1rem' }}>
-                    {t('reservations.large_party')}
+                    {reservationsContent.largeParty.text}
                   </p>
                   <a
-                    href="tel:5551234567"
+                    href={`tel:${site.phoneRaw}`}
                     style={{
                       color: '#8B4513',
                       fontWeight: '600',
                       textDecoration: 'none',
                     }}
                   >
-                    (555) 123-4567
+                    {site.phone}
                   </a>
                 </div>
               </AnimateOnScroll>
@@ -369,10 +358,10 @@ export default function Reservations() {
                       marginBottom: '0.5rem',
                     }}
                   >
-                    {t('reservations.cancellation_policy')}
+                    {reservationsContent.cancellation.title}
                   </h3>
                   <p style={{ fontSize: '0.875rem', color: '#666' }}>
-                    {t('reservations.cancellation_text')}
+                    {reservationsContent.cancellation.text}
                   </p>
                 </div>
               </AnimateOnScroll>

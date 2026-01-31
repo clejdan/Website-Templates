@@ -1,0 +1,21 @@
+{
+  "hero": {
+    "title": "You Look Hungry. We Can Fix That.",
+    "subtitle": "Food so good, your diet will file a restraining order",
+    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&h=1080&fit=crop"
+  },
+  "featured": {
+    "title": "Stuff We're Proud Of"
+  },
+  "story": {
+    "title": "How We Got Here",
+    "text": "We started cooking because we were hungry. Turns out other people were too. Now here we are.",
+    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop"
+  },
+  "hours": {
+    "title": "When We're Awake"
+  },
+  "location": {
+    "title": "Come Find Us"
+  }
+}

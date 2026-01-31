@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import Button from '../components/ui/Button';
 import { Input, Textarea } from '../components/ui/Input';
 import { AnimateOnScroll } from '../hooks/useScrollAnimation.jsx';
+import contactContent from '../content/contact.json';
+import site from '../content/site.json';
 
 export default function Contact() {
-  const { t } = useTranslation();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -94,7 +94,7 @@ export default function Contact() {
           style={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: 'url(https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1920&h=600&fit=crop)',
+            backgroundImage: `url(${contactContent.hero.image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -111,7 +111,7 @@ export default function Contact() {
                 color: 'white',
               }}
             >
-              {t('contact.title')}
+              {contactContent.hero.title}
             </h1>
           </AnimateOnScroll>
         </div>
@@ -139,7 +139,7 @@ export default function Contact() {
                     marginBottom: '2rem',
                   }}
                 >
-                  {t('contact.get_in_touch')}
+                  {contactContent.getInTouch.title}
                 </h2>
               </AnimateOnScroll>
 
@@ -148,9 +148,10 @@ export default function Contact() {
                 <AnimateOnScroll animation="fadeRight" delay={0.1}>
                   <ContactItem
                     icon="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    title={t('contact.address')}
+                    title={contactContent.labels.address}
                   >
-                    <p style={{ whiteSpace: 'pre-line' }}>{t('contact.address_value')}</p>
+                    <p>{site.address.street}</p>
+                    <p>{site.address.city}, {site.address.state} {site.address.zip}</p>
                   </ContactItem>
                 </AnimateOnScroll>
 
@@ -158,10 +159,10 @@ export default function Contact() {
                 <AnimateOnScroll animation="fadeRight" delay={0.2}>
                   <ContactItem
                     icon="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    title={t('contact.phone')}
-                    href="tel:5551234567"
+                    title={contactContent.labels.phone}
+                    href={`tel:${site.phoneRaw}`}
                   >
-                    {t('contact.phone_value')}
+                    {site.phone}
                   </ContactItem>
                 </AnimateOnScroll>
 
@@ -169,10 +170,10 @@ export default function Contact() {
                 <AnimateOnScroll animation="fadeRight" delay={0.3}>
                   <ContactItem
                     icon="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    title={t('contact.email')}
-                    href="mailto:hello@restaurant.com"
+                    title={contactContent.labels.email}
+                    href={`mailto:${site.email}`}
                   >
-                    {t('contact.email_value')}
+                    {site.email}
                   </ContactItem>
                 </AnimateOnScroll>
 
@@ -180,9 +181,9 @@ export default function Contact() {
                 <AnimateOnScroll animation="fadeRight" delay={0.4}>
                   <ContactItem
                     icon="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
-                    title={t('contact.parking')}
+                    title={contactContent.labels.parking}
                   >
-                    <p>{t('contact.parking_text')}</p>
+                    <p>{contactContent.parking.text}</p>
                   </ContactItem>
                 </AnimateOnScroll>
               </div>
@@ -229,7 +230,7 @@ export default function Contact() {
                         textDecoration: 'none',
                       }}
                     >
-                      {t('contact.get_directions')} →
+                      {site.cta.getDirections} →
                     </a>
                   </div>
                 </div>
@@ -248,7 +249,7 @@ export default function Contact() {
                     marginBottom: '2rem',
                   }}
                 >
-                  {t('contact.send_message')}
+                  {contactContent.form.title}
                 </h2>
               </AnimateOnScroll>
 
@@ -292,10 +293,10 @@ export default function Contact() {
                         marginBottom: '0.5rem',
                       }}
                     >
-                      {t('contact.message_sent')}
+                      {contactContent.success.title}
                     </h3>
                     <p style={{ color: '#666' }}>
-                      {t('contact.message_sent_text')}
+                      {contactContent.success.text}
                     </p>
                   </div>
                 ) : (
@@ -310,33 +311,33 @@ export default function Contact() {
                   >
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                       <Input
-                        label={t('contact.your_name')}
+                        label={contactContent.form.nameLabel}
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="John Doe"
+                        placeholder={contactContent.form.namePlaceholder}
                         required
                       />
                       <Input
-                        label={t('contact.your_email')}
+                        label={contactContent.form.emailLabel}
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="john@example.com"
+                        placeholder={contactContent.form.emailPlaceholder}
                         required
                       />
                       <Textarea
-                        label={t('contact.message')}
+                        label={contactContent.form.messageLabel}
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder={t('contact.message_placeholder')}
+                        placeholder={contactContent.form.messagePlaceholder}
                         rows={5}
                         required
                       />
                       <Button type="submit" size="lg" fullWidth>
-                        {t('contact.send')}
+                        {contactContent.form.submitButton}
                       </Button>
                     </div>
                   </form>

@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "title": "Contact Us",
+    "image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1920&h=600&fit=crop"
+  },
+  "getInTouch": {
+    "title": "Get in Touch"
+  },
+  "labels": {
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "parking": "Parking Information"
+  },
+  "parking": {
+    "text": "Free parking available in the rear lot. Street parking also available."
+  },
+  "form": {
+    "title": "Send us a Message",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "John Doe",
+    "emailLabel": "Your Email",
+    "emailPlaceholder": "john@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "submitButton": "Send Message"
+  },
+  "success": {
+    "title": "Message Sent!",
+    "text": "Thank you for reaching out. We'll get back to you soon."
+  }
+}

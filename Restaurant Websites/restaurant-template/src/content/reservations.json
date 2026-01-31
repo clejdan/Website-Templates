@@ -1,0 +1,50 @@
+{
+  "hero": {
+    "title": "Make a Reservation",
+    "subtitle": "Join us for an unforgettable dining experience",
+    "image": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1920&h=600&fit=crop"
+  },
+  "form": {
+    "dateLabel": "Date",
+    "timeLabel": "Time",
+    "timePlaceholder": "Select time",
+    "partySizeLabel": "Party Size",
+    "partySizePlaceholder": "Select",
+    "guestSingular": "guest",
+    "guestPlural": "guests",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "John Doe",
+    "emailLabel": "Email",
+    "emailPlaceholder": "john@example.com",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "(555) 123-4567",
+    "specialRequestsLabel": "Special Requests",
+    "specialRequestsPlaceholder": "Dietary restrictions, celebrations, seating preferences...",
+    "submitButton": "Book Now"
+  },
+  "timeSlots": [
+    { "value": "17:00", "label": "5:00 PM" },
+    { "value": "17:30", "label": "5:30 PM" },
+    { "value": "18:00", "label": "6:00 PM" },
+    { "value": "18:30", "label": "6:30 PM" },
+    { "value": "19:00", "label": "7:00 PM" },
+    { "value": "19:30", "label": "7:30 PM" },
+    { "value": "20:00", "label": "8:00 PM" },
+    { "value": "20:30", "label": "8:30 PM" },
+    { "value": "21:00", "label": "9:00 PM" }
+  ],
+  "maxPartySize": 12,
+  "largeParty": {
+    "title": "10+ Guests?",
+    "text": "For parties of 10+, please call us directly."
+  },
+  "cancellation": {
+    "title": "Cancellation Policy",
+    "text": "Please cancel at least 24 hours in advance."
+  },
+  "confirmation": {
+    "title": "Reservation Confirmed!",
+    "text": "We've sent a confirmation to your email. We look forward to seeing you!",
+    "detailsTitle": "Reservation Details"
+  }
+}

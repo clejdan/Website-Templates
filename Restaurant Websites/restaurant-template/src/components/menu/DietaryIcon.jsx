@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import menuData from '../../content/menu.json';
 
 const dietaryIcons = {
   vegetarian: { emoji: '🌱', colorClass: 'bg-green-100 text-green-700' },
@@ -12,21 +12,12 @@ const dietaryIcons = {
 };
 
 export default function DietaryIcon({ type, showLabel = false, size = 'md' }) {
-  const { t } = useTranslation();
   const [showTooltip, setShowTooltip] = useState(false);
 
   const icon = dietaryIcons[type];
   if (!icon) return null;
 
-  const labels = {
-    vegetarian: t('menu.vegetarian'),
-    vegan: t('menu.vegan'),
-    glutenFree: t('menu.gluten_free'),
-    nutFree: t('menu.nut_free'),
-    dairyFree: t('menu.dairy_free'),
-    spicy: t('menu.spicy'),
-    chefsPick: t('menu.chefs_pick'),
-  };
+  const labels = menuData.dietaryKey.labels;
 
   const sizes = {
     sm: 'text-sm',
@@ -64,8 +55,6 @@ export default function DietaryIcon({ type, showLabel = false, size = 'md' }) {
 }
 
 export function DietaryKey() {
-  const { t } = useTranslation();
-
   const allTypes = [
     'vegetarian',
     'vegan',
@@ -78,7 +67,7 @@ export function DietaryKey() {
 
   return (
     <div className="bg-background-alt rounded-lg p-4">
-      <h4 className="text-sm font-semibold text-secondary mb-3">{t('menu.dietary_key')}</h4>
+      <h4 className="text-sm font-semibold text-secondary mb-3">{menuData.dietaryKey.title}</h4>
       <div className="flex flex-wrap gap-4">
         {allTypes.map((type) => (
           <DietaryIcon key={type} type={type} showLabel size="sm" />
