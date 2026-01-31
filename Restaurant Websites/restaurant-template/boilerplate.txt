@@ -1,0 +1,33 @@
+Line Count Analysis                                                                                                                                 
+  ┌─────────────────────┬────────┬────────────┐                                                                                                       
+  │      Category       │ Lines  │ % of Total │                                                                                                       
+  ├─────────────────────┼────────┼────────────┤                                                                                                       
+  │ Config/Boilerplate  │ ~106   │ 4%         │                                                                                                       
+  ├─────────────────────┼────────┼────────────┤                                                                                                       
+  │ Custom Components   │ ~2,318 │ 81%        │                                                                                                       
+  ├─────────────────────┼────────┼────────────┤                                                                                                       
+  │ Custom Data/Content │ ~483   │ 17%        │                                                                                                       
+  ├─────────────────────┼────────┼────────────┤                                                                                                       
+  │ Total (src/)        │ ~2,870 │ 100%       │                                                                                                       
+  └─────────────────────┴────────┴────────────┘                                                                                                       
+  What's Boilerplate (~4%)                                                                                                                            
+                                                                                                                                                      
+  - vite.config.js - 8 lines (standard Vite setup)                                                                                                    
+  - eslint.config.js - 29 lines (standard ESLint)                                                                                                     
+  - main.jsx - 11 lines (React entry point)                                                                                                           
+  - i18n.js - 33 lines (i18next setup)                                                                                                                
+  - App.jsx - 25 lines (router config)                                                                                                                
+                                                                                                                                                      
+  What's Custom (~96%)                                                                                                                                
+                                                                                                                                                      
+  - Pages (1,395 lines) - Home, Menu, About, Reservations, Contact                                                                                    
+  - Layout (361 lines) - Header, Footer, Layout wrapper                                                                                               
+  - UI Components (330 lines) - Button, Card, Input, Select, Textarea                                                                                 
+  - Menu Components (141 lines) - MenuItem, DietaryIcon, etc.                                                                                         
+  - Hooks (91 lines) - useScrollAnimation                                                                                                             
+  - Translations (224 lines) - English + Spanish                                                                                                      
+  - Menu Data (166 lines) - All menu items                                                                                                            
+  - Custom CSS (93 lines) - Theme variables, typography                                                                                               
+                                                                                                                                                      
+  Bottom line: This is ~96% custom code. The only true boilerplate is the standard Vite/React/ESLint scaffolding. Everything else - the components,   
+  pages, styling, data, and i18n content - is purpose-built for this restaurant template.                   
