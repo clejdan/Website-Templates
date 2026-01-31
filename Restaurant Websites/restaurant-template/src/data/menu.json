@@ -1,0 +1,166 @@
+{
+  "categories": [
+    {
+      "id": "appetizers",
+      "nameKey": "menu.categories.appetizers"
+    },
+    {
+      "id": "mains",
+      "nameKey": "menu.categories.mains"
+    },
+    {
+      "id": "desserts",
+      "nameKey": "menu.categories.desserts"
+    },
+    {
+      "id": "drinks",
+      "nameKey": "menu.categories.drinks"
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "category": "appetizers",
+      "name": "Bruschetta",
+      "description": "Grilled bread rubbed with garlic, topped with fresh tomatoes, basil, and extra virgin olive oil.",
+      "price": 12.00,
+      "dietary": ["vegetarian", "vegan"],
+      "image": "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 2,
+      "category": "appetizers",
+      "name": "Calamari Fritti",
+      "description": "Crispy fried calamari served with marinara sauce and lemon aioli.",
+      "price": 16.00,
+      "dietary": [],
+      "image": "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 3,
+      "category": "appetizers",
+      "name": "Soup of the Day",
+      "description": "Chef's daily creation made with fresh, seasonal ingredients. Ask your server for today's selection.",
+      "price": 9.00,
+      "dietary": ["glutenFree"],
+      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 4,
+      "category": "appetizers",
+      "name": "Caesar Salad",
+      "description": "Crisp romaine lettuce, parmesan cheese, croutons, and house-made Caesar dressing.",
+      "price": 14.00,
+      "dietary": ["vegetarian"],
+      "image": "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 5,
+      "category": "mains",
+      "name": "Grilled Salmon",
+      "description": "Pan-seared Atlantic salmon with lemon butter sauce, seasonal vegetables, and wild rice pilaf.",
+      "price": 32.00,
+      "dietary": ["glutenFree", "dairyFree", "chefsPick"],
+      "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 6,
+      "category": "mains",
+      "name": "Filet Mignon",
+      "description": "8oz center-cut beef tenderloin, served with truffle mashed potatoes and red wine reduction.",
+      "price": 48.00,
+      "dietary": ["glutenFree"],
+      "image": "https://images.unsplash.com/photo-1558030006-450675393462?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 7,
+      "category": "mains",
+      "name": "Garden Risotto",
+      "description": "Creamy arborio rice with roasted seasonal vegetables, parmesan, and fresh herbs.",
+      "price": 24.00,
+      "dietary": ["vegetarian", "glutenFree", "chefsPick"],
+      "image": "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 8,
+      "category": "mains",
+      "name": "Thai Coconut Curry",
+      "description": "Spicy coconut curry with tofu, vegetables, and jasmine rice. Vegan and nut-free preparation.",
+      "price": 22.00,
+      "dietary": ["vegan", "glutenFree", "nutFree", "spicy"],
+      "image": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 9,
+      "category": "mains",
+      "name": "Chicken Parmesan",
+      "description": "Breaded chicken breast topped with marinara and melted mozzarella, served with spaghetti.",
+      "price": 26.00,
+      "dietary": [],
+      "image": "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 10,
+      "category": "desserts",
+      "name": "Tiramisu",
+      "description": "Classic Italian dessert with layers of espresso-soaked ladyfingers and mascarpone cream.",
+      "price": 12.00,
+      "dietary": ["vegetarian"],
+      "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 11,
+      "category": "desserts",
+      "name": "Chocolate Lava Cake",
+      "description": "Warm chocolate cake with a molten center, served with vanilla ice cream.",
+      "price": 14.00,
+      "dietary": ["vegetarian", "chefsPick"],
+      "image": "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 12,
+      "category": "desserts",
+      "name": "Seasonal Fruit Sorbet",
+      "description": "Refreshing house-made sorbet featuring the season's finest fruits.",
+      "price": 8.00,
+      "dietary": ["vegan", "glutenFree", "nutFree", "dairyFree"],
+      "image": "https://images.unsplash.com/photo-1488900128323-21503983a07e?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 13,
+      "category": "drinks",
+      "name": "House Red Wine",
+      "description": "Glass of our carefully selected house red wine.",
+      "price": 12.00,
+      "dietary": ["vegan", "glutenFree"],
+      "image": null
+    },
+    {
+      "id": 14,
+      "category": "drinks",
+      "name": "House White Wine",
+      "description": "Glass of our refreshing house white wine.",
+      "price": 12.00,
+      "dietary": ["vegan", "glutenFree"],
+      "image": null
+    },
+    {
+      "id": 15,
+      "category": "drinks",
+      "name": "Craft Cocktail",
+      "description": "Ask your server about our rotating selection of handcrafted cocktails.",
+      "price": 15.00,
+      "dietary": [],
+      "image": null
+    },
+    {
+      "id": 16,
+      "category": "drinks",
+      "name": "Fresh Lemonade",
+      "description": "House-made lemonade with fresh-squeezed lemons and a hint of mint.",
+      "price": 5.00,
+      "dietary": ["vegan", "glutenFree", "nutFree"],
+      "image": null
+    }
+  ]
+}

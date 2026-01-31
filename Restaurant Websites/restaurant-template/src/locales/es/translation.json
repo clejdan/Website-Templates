@@ -1,0 +1,112 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "menu": "Menú",
+    "about": "Nosotros",
+    "reservations": "Reservaciones",
+    "contact": "Contacto",
+    "language": "Idioma"
+  },
+  "home": {
+    "hero_title": "Bienvenidos a Nuestro Restaurante",
+    "hero_subtitle": "Una experiencia gastronómica inolvidable",
+    "reserve_button": "Reservar una Mesa",
+    "view_menu": "Ver Menú",
+    "featured_dishes": "Platos Destacados",
+    "our_story": "Nuestra Historia",
+    "our_story_text": "Una breve introducción a la historia y filosofía de nuestro restaurante.",
+    "hours_title": "Horario de Atención",
+    "hours_weekday": "Lunes - Viernes: 11am - 10pm",
+    "hours_weekend": "Sábado - Domingo: 10am - 11pm",
+    "visit_us": "Visítanos"
+  },
+  "menu": {
+    "title": "Nuestro Menú",
+    "dietary_key": "Guía Dietética",
+    "vegetarian": "Vegetariano",
+    "vegan": "Vegano",
+    "gluten_free": "Sin Gluten",
+    "nut_free": "Sin Frutos Secos",
+    "dairy_free": "Sin Lácteos",
+    "spicy": "Picante",
+    "chefs_pick": "Recomendación del Chef",
+    "categories": {
+      "appetizers": "Entradas",
+      "mains": "Platos Principales",
+      "desserts": "Postres",
+      "drinks": "Bebidas"
+    },
+    "download_pdf": "Descargar Menú PDF"
+  },
+  "reservations": {
+    "title": "Hacer una Reservación",
+    "subtitle": "Únase a nosotros para una experiencia gastronómica inolvidable",
+    "date": "Fecha",
+    "time": "Hora",
+    "party_size": "Número de Personas",
+    "guest": "persona",
+    "guests": "personas",
+    "name": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "special_requests": "Solicitudes Especiales",
+    "special_requests_placeholder": "Restricciones dietéticas, celebraciones, preferencias de asiento...",
+    "submit": "Reservar Ahora",
+    "confirmation_title": "¡Reservación Confirmada!",
+    "confirmation_text": "Hemos enviado una confirmación a su correo. ¡Esperamos verle pronto!",
+    "large_party": "Para grupos de 10+, por favor llámenos directamente.",
+    "cancellation_policy": "Política de Cancelación",
+    "cancellation_text": "Por favor cancele con al menos 24 horas de anticipación."
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "our_story": "Nuestra Historia",
+    "our_story_text": "Fundado en 2010, nuestro restaurante se ha dedicado a brindar experiencias gastronómicas excepcionales a nuestra comunidad. Creemos en usar solo los ingredientes más frescos y de origen local para crear platos que deleiten e inspiren.",
+    "meet_the_chef": "Conoce al Chef",
+    "chef_bio": "La Chef María Rodríguez aporta más de 20 años de experiencia culinaria a nuestra cocina. Formada en técnica clásica francesa con pasión por los ingredientes locales, crea platos que honran la tradición mientras abrazan la innovación.",
+    "our_team": "Nuestro Equipo",
+    "awards": "Premios y Reconocimientos"
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "get_in_touch": "Ponte en Contacto",
+    "address": "Dirección",
+    "address_value": "123 Calle del Restaurante\nNueva York, NY 10001",
+    "phone": "Teléfono",
+    "phone_value": "(555) 123-4567",
+    "email": "Correo Electrónico",
+    "email_value": "hola@restaurante.com",
+    "parking": "Información de Estacionamiento",
+    "parking_text": "Estacionamiento gratuito disponible en el lote trasero. También hay estacionamiento en la calle.",
+    "get_directions": "Cómo Llegar",
+    "send_message": "Envíanos un Mensaje",
+    "your_name": "Tu Nombre",
+    "your_email": "Tu Correo",
+    "message": "Mensaje",
+    "message_placeholder": "¿Cómo podemos ayudarte?",
+    "send": "Enviar Mensaje",
+    "message_sent": "¡Mensaje Enviado!",
+    "message_sent_text": "Gracias por contactarnos. Te responderemos pronto."
+  },
+  "footer": {
+    "hours": "Horario",
+    "quick_links": "Enlaces Rápidos",
+    "follow_us": "Síguenos",
+    "newsletter": "Boletín",
+    "newsletter_placeholder": "Ingresa tu correo",
+    "subscribe": "Suscribirse",
+    "copyright": "Todos los derechos reservados."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Algo salió mal. Por favor intente de nuevo.",
+    "required": "Requerido",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "view_all": "Ver Todo",
+    "learn_more": "Más Información"
+  }
+}

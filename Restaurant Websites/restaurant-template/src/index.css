@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* Color Palette */
+@theme {
+  --color-primary: #8B4513;
+  --color-primary-dark: #6B3410;
+  --color-primary-light: #A65D2E;
+  --color-secondary: #2C3E50;
+  --color-secondary-dark: #1A252F;
+  --color-secondary-light: #3D5269;
+  --color-accent: #D4AF37;
+  --color-accent-dark: #B8960F;
+  --color-accent-light: #E5C85C;
+  --color-background: #FAF9F6;
+  --color-background-alt: #F5F3EE;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-text-muted: #999999;
+  --color-error: #DC2626;
+  --color-success: #16A34A;
+
+  /* Typography */
+  --font-heading: 'Crimson Pro', Georgia, serif;
+  --font-body: 'Nunito Sans', -apple-system, sans-serif;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+}
